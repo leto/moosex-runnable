@@ -29,6 +29,18 @@ Create a class, tag it runnable, and provide a C<run> method:
        return 0; # success
     }
 
+Or if you are using MooseX::Declare
+
+    use MooseX::Declare;
+    use feature 'say';
+
+    class App::HelloWorld with MooseX::Runnable {
+        method run($name) {
+            say "Hello, $name.";
+            return 0; # success
+        }
+    };
+
 Then you can run this class as an application with the included
 C<mx-run> script:
 
